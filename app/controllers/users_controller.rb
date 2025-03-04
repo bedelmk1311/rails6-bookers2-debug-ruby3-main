@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:update]
+  before_action :ensure_correct_user, only: [:edit, :update]
+  #ensure 例外処理 投稿者だけが〜できる
 
   def show
     @user = User.find(params[:id])

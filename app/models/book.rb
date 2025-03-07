@@ -12,4 +12,5 @@ class Book < ApplicationRecord
   end
   #exists存在する favorited_by?メソッド作成
   #(引数で渡されたユーザid)がFavoritesテーブル内に存在するかどうか
+  #books/showでcurrent_userが含まれるかどうかを判定する
 end

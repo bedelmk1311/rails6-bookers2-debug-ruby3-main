@@ -3,10 +3,16 @@ class BookCommentsController < ApplicationController
   #要確認　投稿者だけが削除の権限持たせたい
 
   def create
-    book = Book.find(params[:comment_id])
+    book = Book.find(params[:book_id])
+    #コメントがついた投稿のIDを取得する
     comment = current_user.book_comments.new(book_comment_params)
-    comment.comment_id = book.id
+     #comment = BookComment.new(book_comment_params)
+     #コメント作成
+     #comment.user_id = current_user.id
+    comment.book_id = book.id
+    #コメントがついた投稿のコメントが投稿のIDと同じ？
     comment.save
+    #コメント本文を保存
     redirect_to book_path(book)
   end
 

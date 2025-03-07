@@ -12,13 +12,14 @@ class BookCommentsController < ApplicationController
 
   def destroy
     BookComment.find(params[:id]).destroy
-    redirect_to book_path(params[:book_comment_id])
+    redirect_to book_path(params[:comment_id])
   end
 
   private
 
-  def post_comment_params
-    params.require(:post_comment).permit(:comment)
+  def book_comment_params
+    params.require(:book_comment).permit(:comment)
+    #book_commentのcommentを指定（許可する）
   end
 
   def ensure_correct_user

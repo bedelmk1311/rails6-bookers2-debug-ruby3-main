@@ -16,7 +16,10 @@
         </td>
         <td><%= link_to book.title,book %></td>
         <td><%= book.body %></td>
+        <td>仮いいね</td>
+        <td>仮コメント件数：</td>
       </tr>
     <% end %>
+    <%= book_comments.count %>
   </tbody>
 </table>

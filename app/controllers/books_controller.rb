@@ -10,6 +10,9 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+
+    @book_comment = BookComment.new
+    @book_comments = BookComment.all
   end
 
   def create

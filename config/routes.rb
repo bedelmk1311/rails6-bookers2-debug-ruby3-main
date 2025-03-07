@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "home/about"=>"homes#about"
 
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update] do
+    resource :favorite, only: [:create, :destroy]
+    #単数形にすると、/:idがURLに含まれない
+    #1回しかいいねできないからfavoriteのidが分からなくてもuserのid、bookのidで特定できる
     resources :book_comments, only: [:create, :destroy]
   end
   

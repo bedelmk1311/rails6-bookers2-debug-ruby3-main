@@ -27,8 +27,9 @@
       <div>
         <p>コメント件数：<%= @book.book_comments.count %></p>
         <% @book.book_comments.each do |book_comment| %>
-          <p><%= image_tag book_comment.user.get_profile_image(100,100) %></p>
-          <%= book_comment.user.name %>
+          <p><%= image_tag book_comment.user.get_profile_image, size:"50x50" %></p>
+          <p><%= book_comment.user.name %></p>
+          <%= book_comment.comment %>
         <% end %>
       </div>
 

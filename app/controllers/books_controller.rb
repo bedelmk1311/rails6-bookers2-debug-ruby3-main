@@ -10,9 +10,9 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
     @book = Book.new
-
+    @books = Book.all
+    #@book_find = Book.find(params[:id])
     @book_comment = BookComment.new
     @book_comments = BookComment.all
   end

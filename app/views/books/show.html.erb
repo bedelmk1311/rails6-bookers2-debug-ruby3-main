@@ -29,14 +29,13 @@
         <% @book.book_comments.each do |book_comment| %>
           <p><%= image_tag book_comment.user.get_profile_image(100,100) %></p>
           <%= book_comment.user.name %>
-          <%= book_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
         <% end %>
       </div>
 
       <div>
         <%= form_with model: [@book, @book_comment] do |f| %>
         <%= f.text_area :comment, placeholder: "コメントをここに" %>
-        <p><%= f.submit "Create Comment", class: "btn btn-sm btn-success"%></p>
+        <%= f.submit "Create Comment", class: "btn btn-sm btn-success"%>
         <% end %>
       </div>
     </div>

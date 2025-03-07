@@ -10,7 +10,7 @@ class BookCommentsController < ApplicationController
      #コメント作成
      #comment.user_id = current_user.id
     comment.book_id = book.id
-    #コメントがついた投稿のコメントが投稿のIDと同じ？
+    #コメント本文　コメントがついた投稿のID　コメントが投稿のIDと同じ？
     comment.save
     #コメント本文を保存
     redirect_to book_path(book)

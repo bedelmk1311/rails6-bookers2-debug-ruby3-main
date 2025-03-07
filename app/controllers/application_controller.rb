@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    current_user
+    user_path(resource)
+    #current_userだと思った
   end
 
   def after_sign_out_path_for(resource)

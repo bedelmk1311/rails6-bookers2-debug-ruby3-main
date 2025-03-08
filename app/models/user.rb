@@ -14,9 +14,9 @@ class User < ApplicationRecord
   has_many :followed_relationships, class_name: 'Relationship', foreign_key: 'followed_id' ,dependent: :destroy
   #ユーザーはフォローされた人のIDをもてる　ユーザー削除で消える
 
-  has_many :followings, through: :follower_relationship, source: :followed
+  has_many :followings, through: :follower_relationships, source: :followed
   #follower_relationshipを通してfollowerを取得する =フォローしているユーザーを取得
-  has_many :followers, through: :followed_relationship, source: :follower
+  has_many :followers, through: :followed_relationships, source: :follower
   #followeed_relationshipを通してfollowedを取得する =フォロワーを取得
 
   #指定したユーザーをフォローするメソッド

@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   	  get "followers" => "relationships#followers", as: "followers"
       #viewページ用のルーティング
   end
+
+  get "/search", to: "searches#search"
+  #検索機能にアクセスするためのルーティング
 end

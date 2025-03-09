@@ -13,7 +13,9 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
-        
+          <div class="d-flex justify-content-center ">
+            <%= render "searches/box" %>
+         </div>
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>

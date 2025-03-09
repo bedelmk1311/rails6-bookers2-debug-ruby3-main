@@ -35,6 +35,18 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
+  def self.search_for(keyword, method)
+    if method == 'perfect'
+      User.where(name: keyword)
+    elsif method == 'forward'
+      User.where('name LIKE ?', keyword + '%')
+    elsif method == 'backward'
+      User.where('name LIKE ?', '%' + keyword)
+    else
+      User.where('name LIKE ?', '%' + keyword + '%')
+    end
+  end
+
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :introduction, length: {maximum: 50}

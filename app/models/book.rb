@@ -6,7 +6,7 @@ class Book < ApplicationRecord
 
   def self.search_for(keyword, method)
     if method == 'perfect'
-      Book.where(name: keyword)
+      Book.where(title: keyword)
     elsif method == 'forward'
       Book.where('name LIKE ?', keyword + '%')
     elsif method == 'backward'

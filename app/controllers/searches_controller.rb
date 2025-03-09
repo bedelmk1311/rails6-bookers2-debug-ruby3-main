@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
     if @model  == "user"
       @results = User.search_for(@keyword, @method)
     else
-      @results = Books.search_for(@keyword, @method)
+      @results = Book.search_for(@keyword, @method)
       #search_for メソッド
     end
   end

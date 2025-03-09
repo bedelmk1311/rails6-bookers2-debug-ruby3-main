@@ -9,6 +9,8 @@ class Book < ApplicationRecord
 
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
+    #favorites.where(user_id: user.id).exists? サンプル答え版
+
   end
   #exists存在する favorited_by?メソッド作成
   #(引数で渡されたユーザid)がFavoritesテーブル内に存在するかどうか

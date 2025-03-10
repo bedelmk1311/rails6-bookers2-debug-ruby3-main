@@ -1,4 +1,8 @@
 $(".favorite-btn").html("<%= escape_javascript(render partial: 'favorites/favorite-btn', locals: {book: @book}) %>");
   // インスタンス変数は、favorites_controllerのcreateアクションで定義されたものが使用できます。
-  // 以下の記述でも同じ挙動をします。html()以降では部分テンプレートを呼び出しています。
-  $(".favorite-btn").html("<%= j(render 'favorites/favorite-btn', book: @book) %>");
+  // $("~") JavaScriptのセレクタを使用して特定の要素を選択 置き換えを説明している感じ
+  // .html() html側　変更する要素を指定
+  // ()内　部分テンプレートに@bookを渡し、'favorites/btn'`という部分テンプレートを呼び出します。
+
+  // $("#favorite_btn_<%= @book.id %>").html("<%= j(render 'favorites/btn', book: @book) %>");
+  // 短縮系

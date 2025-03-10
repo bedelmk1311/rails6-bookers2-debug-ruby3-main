@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
     book = Book.find(params[:book_id])
     favorite = current_user.favorites.new(book_id: book.id)
      #favorite = Favorite.new(favorite_params)
-     #いいね作成
+     #現在のユーザーのいいねを作成（そのIDはbook.id）
      #favorite.user_id = current_user.id と同義？
     favorite.save
     #redirect_to request.referer
